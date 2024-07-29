@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=100&id=zFMhE88YdSqt&format=png&color=000000">
+</head>
+<body>
+    <header>
+
+    </header>
+    <section>
+       
+        <!-- <img src="<%= SINGLE_COMMENT.photo %>" alt="img" draggable="false"> -->
+        <h2><%= SINGLE_COMMENT.user_id %> </h2>
+        <span><%= SINGLE_COMMENT.description_comment %> </span>
+        
+        <a href="/comments">Back to the list</a>
+
+        <form action="/comments/<%= SINGLE_COMMENT.comment_id %>/delete" method="post">
+            <button type="submit">Delete comment</button>
+        </form>
+    </section>
+</body>
+</html>

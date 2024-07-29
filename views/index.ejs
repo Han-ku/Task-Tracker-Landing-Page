@@ -1,0 +1,360 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=100&id=zFMhE88YdSqt&format=png&color=000000">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images\icons8-fire.gif" alt="Logo Moving Fire" id="logoImg">
+            <p id="logoText"> Task Tracker</p>
+        </div>
+        
+        <nav>
+            <ul class="header_list">
+                <li><a href="#" data-target=".hero">Home</a></li>
+                <li><a href="#" data-target=".features">Features</a></li>
+                <li><a href="#" data-target=".about">About</a> </li>
+                <li><a href="#" data-target=".testimonials">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger">
+            <span></span>
+        </div>
+
+    </header>
+
+    <section class="hero">
+        <div class="hero_container">
+            <div class="hero_text">
+                <h1>Manage Your Tasks Efficiently</h1>
+    
+                <p id="hero_description">
+                    Track your tasks, set deadlines, and never miss a beat
+                </p>
+    
+                <button id="get_started"> Get Started </button>
+            </div>
+    
+            <div class="hero_img_container">
+                <div class="hero_gallery">
+                    <div class="panel panel-1 active">
+                        <h3>HI</h3>
+                    </div>
+                    <div class="panel panel-2 ">
+                        <h3>HI</h3>
+                    </div>
+                    <div class="panel panel-3 ">
+                        <h3>HI</h3>
+                    </div>
+                    <div class="panel panel-4 ">
+                        <h3>HI</h3>
+                    </div>
+                    <div class="panel panel-5 ">
+                        <h3>HI</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+
+        <h2>Why Choose Task Tracker? </h2>
+
+        <ul class="about_list">
+            <li class="about_item">
+                <img src="..\images\easy.png" alt="">
+                <div>
+                    <h3>Easy to Use</h3>
+                    <p>Our tool is user-friendly and simple to navigate.</p>
+                </div>
+                
+            </li>
+            <li class="about_item">
+                <img src="..\images\software-engineer.png" alt="">
+                <div>
+                    <h3>Customizable</h3>
+                    <p>We prioritize your privacy and data security.</p>
+                </div>
+            </li>
+            <li class="about_item">
+                <img src="..\images\bad-person.png" alt="">
+                <div>
+                    <h3>Secure</h3>
+                    <p>Adjust the tracker to fit your personal workflow.</p>
+                </div>
+            </li>
+            <li class="about_item">
+                <img src="..\images\suggest.png"  alt="">
+                <div>
+                    <h3>Support</h3>
+                    <p>Our support team is here to help you 24/7.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="features">
+        <h2>Features</h2>
+
+        <ul class="features_list">
+            <li class="features_item">
+                <h3>Stay Organized</h3>
+                <p>Effortlessly manage your tasks with our intuitive interface. Our user-friendly design allows you to add, edit, and prioritize tasks quickly, ensuring nothing falls through the cracks. With color-coded labels, customizable categories, and easy-to-use filters, you can keep track of your workload efficiently. Whether it's for personal use or team collaboration, our task organization tools help you stay on top of your responsibilities.</p>
+            </li>
+
+            <li class="features_item">
+                <h3>Track Progress</h3>
+                <p>Visualize your progress with our built-in tracking tools. Use interactive graphs and charts to see how far you've come and what still needs to be done. Our progress tracker updates in real-time, providing you with a clear overview of your accomplishments and pending tasks. Set milestones, monitor deadlines, and celebrate your achievements as you reach each goal.</p>
+            </li>
+
+            <li class="features_item">
+                <h3>Set Deadlines</h3>
+                <p>Never miss a deadline again with our smart reminder system. Set due dates for each task and receive timely notifications to keep you on track. Customize your reminders to fit your schedule and preferences. Our system supports both email and push notifications, ensuring you are always aware of upcoming deadlines, whether you're at your desk or on the go.</p>
+            </li>
+
+            <li class="features_item">
+                <h3>Collaborate with Ease</h3>
+                <p>Work seamlessly with your team using our collaborative features. Assign tasks, share updates, and communicate effectively within the app. Our collaboration tools include real-time chat, file sharing, and progress tracking, making it easy to work together, no matter where your team members are located. Keep everyone on the same page and ensure that projects are completed efficiently.</p>
+            </li>
+
+            <li class="features_item">
+                <h3>Customizable Workflows</h3>
+                <p>Adapt Task Tracker to fit your unique needs. Customize your task views, create unique workflows, and tailor the app to suit your personal or team preferences. Use our drag-and-drop interface to reorganize tasks, set dependencies, and create templates for recurring projects. Our flexibility allows you to build a system that works best for you, enhancing your productivity and efficiency.</p>
+            </li>
+
+            <li class="features_item">
+                <h3>Secure and Reliable</h3>
+                <p>Your data is safe with us. We use top-notch security measures to ensure your information is protected at all times. Our platform employs encryption, secure servers, and regular backups to safeguard your data. You can trust Task Tracker to keep your information confidential and secure, allowing you to focus on your tasks without worry.</p>
+            </li>
+           
+        </ul>
+    </section>
+
+    <section class="project_manager">
+        <h2>Try out product</h2>
+        <div id="toastOverlay" class="toast_overlay hidden">
+            <div class="toast_content">
+                <p>Are you sure you want to submit?</p>
+                <div class="toast_buttons">
+                    <button id="submitBtn" class="btn submit-btn">Submit</button>
+                    <button id="cancelBtn" class="btn cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper_project_manager">       
+            <div class="boards">
+                <div class="boards_item">
+                    <div id="board_header">
+                        <span contenteditable="true" class="title">To Do</span>
+                    </div>
+                        
+                    <div class="list">
+                        <div class="list_item" draggable="true">
+                            First Card
+                        </div>
+                    </div>
+                    <div class="form">
+                        <textarea class="textarea" placeholder="Input card name"></textarea>
+                        <div class="buttons">
+                             <button class="add_item_btn"> Add Card </button>
+                             <button class="cancel_item_btn"> Cancel </button>
+                        </div>
+                    </div>
+    
+                    <div class="add_btn"><span>+</span> Add new Card</div>
+                </div>
+    
+                <div class="boards_item">
+                    <div id="board_header">
+                        <span contenteditable="true" class="title">In progress</span>
+                        <img class="board_delete_img" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="">
+                    </div>
+                    
+                    <div class="list">
+                        <div class="list_item" draggable="true">
+                            First Card
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="boards_item">
+                    <div id="board_header">
+                        <span contenteditable="true" class="title">Done</span>
+                        <img class="board_delete_img" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="">
+                    </div>
+                    
+                    <div class="list">
+                        <div class="list_item" draggable="true">
+                            First Card
+                        </div>
+                    </div>
+                </div>    
+            </div>
+                    
+            <button class="add_board_btn">Add new board</button>
+            <p id="board_note">* To delete a specific task, click on it twice</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+
+        <div class="hidden_wrapper hidden">
+            <h3>As i can see we currently don't have any comments :c </h3>
+            <h3>Please add some comment </h3>
+            <h3>Only positive comments will be accepted</h3>
+        </div>
+
+        <div class="wrapper">
+            <img src="images\left-arrow.png" alt="" id="left" class="testimonials_arrows fa-solid fa-angle-left">
+            <ul class="carousel">
+                <% COMMENTS.forEach(SINGLE_COMMENT => { %>
+                    <li class="card">
+                        <p><%= SINGLE_COMMENT.formatted_date  %></p>
+                        <div class="img">
+                            <%
+                                const randomImage = imageFiles[Math.floor(Math.random() * imageFiles.length)];
+                            %>
+                            <img src="/images/users/<%= randomImage %>" alt="User Photo" draggable="false">
+                        </div>
+                        <h2><%= SINGLE_COMMENT.first_name %> <%= SINGLE_COMMENT.last_name %> </h2>
+                        <!-- <span><%= SINGLE_COMMENT.description_comment.substring(0,30) %>... </span> -->
+                        <span><%= SINGLE_COMMENT.description_comment.length > 30 
+                            ? SINGLE_COMMENT.description_comment.substring(0,30) + '...' 
+                            : SINGLE_COMMENT.description_comment %></span>
+                        <% if (SINGLE_COMMENT.description_comment.length > 30) { %>
+                            <button class="see-more-btn" data-full-comment="<%= SINGLE_COMMENT.description_comment %>">See More</button>
+                        <% } %>
+
+                    </li>
+                <% }) %>
+            </ul>
+            <div id="toastCommentOverlay" class="toast_overlay hidden">
+                <div class="toast_content toast_content-comment">
+                    <div class="toast_buttons_comment">
+                        <button id="closeCommentBtn" class="close-comment-btn">
+                            <img src="/images/delete.png" alt="">
+                        </button>
+                    </div>
+
+                    <div class="comment-info">
+                        <div class="comment-person-info">
+                            <div class="img">
+                                <img id="toastImage" src="" alt="User Photo">
+                            </div>
+                            <h2 id="toastName"></h2>
+                            <p id="toastDate"></p>
+                        </div>
+                        <p id="fullComment"></p>
+                    </div>
+                </div>
+            </div>
+            <img src="images\right-arrow.png" alt="" id="right" class="testimonials_arrows fa-solid fa-angle-right">
+        </div>
+        <div class="newCommentDiv">
+            <form action="/comments" method="post" id="commentForm">
+                <div class="inputComment">
+                    <label for="userNameInput">Put your username</label>
+                    <input type="text" name="username" id="userNameInput" placeholder="Your username.." required>
+                    <div class="incorrectDataInputComment" ></div>
+                </div>
+
+                <div class="inputComment">
+                    <label for="userCommentInput">New comment</label>
+                    <textarea name="description_comment" id="userCommentInput" placeholder="Your comment.." required></textarea>
+                    <p id="comment_max_length"></p>
+                    <div class="incorrectDataInputComment" ></div>
+                </div>
+
+                <div class="newUserFields hidden">
+                    <div class="newUserFields-container">
+                        <div class="personal_data">
+                            <div class="input">
+                                <label for="firstName">First Name</label>
+                                <input type="text" name="first_name" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="input">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" name="last_name" id="lastName" placeholder="Last Name">
+                            </div>
+                            <div class="input">
+                                <label for="birthDate">Birth Date</label>
+                                <input type="date" name="birth_date" id="birthDate" placeholder="Birth Date">
+                            </div>
+                        </div>
+                        <div class="user_data">
+                            <div class="user_data-container">
+                                <div class="input">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="user_name" id="username" placeholder="Username">
+                                </div>
+                                <div class="input">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="user_password" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="bottom_comment">
+                    <p id="bottom_comment-alert" class="denied approved"></p>
+                    <button type="submit" class="newCommentBtn">Add comment</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="quortes-container">
+         <div class="wrapper_quotes">
+            <figure class="quote_clock">
+                <blockquote class="quote">Only do what you want to do</blockquote>
+                <p class="author">Princess</p>
+            </figure>
+            <button class="btn_change_quote"> Change </button>
+        </div>
+    </section>
+
+    <footer>
+        <div id="footer">
+            <div class="footer-menu">
+                <a href="#" data-target=".hero">HOME</a>
+                <a href="#" data-target=".features">FEATURES</a>
+                <a href="#" data-target=".about">ABOUT</a> 
+                <a href="#" data-target=".testimonials">CONTACT</a>
+            </div>
+            
+            <div class="social">
+                <a href="">
+                    <img src="\images\social\icons8-facebook-48.png" alt="">
+                </a>
+                <a href="">
+                    <img src="\images\social\icons8-instagram-48.png" alt="">
+                </a>
+                <a href="">
+                    <img src="\images\social\icons8-twitter-48.png" alt="">
+                </a>
+            </div>
+        </div>
+        
+        <p>Task Tracker. </p>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <img src="\images\icons8-arrow-up-48.png" alt="">
+    </button>
+
+    <script src="scripts\slider.js"></script>
+    <script src="scripts\quotes.js"></script>
+    <script src="scripts\manager.js"></script>
+    <script src="scripts\main.js"></script>
+    <script src="scripts\gallery.js"></script>
+    <script src="scripts\addNewComment.js" type="module"></script>
+</body>
+</html>
