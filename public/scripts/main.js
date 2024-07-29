@@ -50,28 +50,38 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav li');
+    const burger = document.querySelector('.burger')
+    const nav = document.querySelector('nav')
+    const navLinks = document.querySelectorAll('nav li')
 
     burger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('open');
+        this.classList.toggle('active')
+        nav.classList.toggle('open')
 
         // Toggle body overflow
         if (nav.classList.contains('open')) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'
         }
-    });
+    })
 
-    // Add click event to each nav link to close the menu
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            burger.classList.remove('active');
-            nav.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        });
-    });
-});
+            burger.classList.remove('active')
+            nav.classList.remove('open')
+            document.body.style.overflow = 'auto'
+        })
+    })
+})
+
+document.querySelectorAll('.footer-menu a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault()
+
+        const target = document.querySelector(this.getAttribute('href'))
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' })
+        }
+    })
+})
