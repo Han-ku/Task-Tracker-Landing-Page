@@ -143,6 +143,7 @@
         </ul>
     </section>
 
+    
     <section class="project_manager" id="project_manager">
         <h2>Try out product</h2>
         <div id="toastOverlay" class="toast_overlay hidden">
@@ -154,56 +155,35 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper_project_manager">       
+        <div class="wrapper_project_manager">
             <div class="boards">
-                <div class="boards_item">
+                <div class="boards_item predefined-board" data-board-id="todo">
                     <div id="board_header">
                         <span contenteditable="true" class="title">To Do</span>
                     </div>
-                        
-                    <div class="list">
-                        <div class="list_item" draggable="true">
-                            First Card
-                        </div>
-                    </div>
+                    <div class="list"></div>
                     <div class="form">
                         <textarea class="textarea" placeholder="Input card name"></textarea>
                         <div class="buttons">
-                             <button class="add_item_btn"> Add Card </button>
-                             <button class="cancel_item_btn"> Cancel </button>
+                            <button class="add_item_btn"> Add Card </button>
+                            <button class="cancel_item_btn"> Cancel </button>
                         </div>
                     </div>
-    
                     <div class="add_btn"><span>+</span> Add new Card</div>
                 </div>
-    
-                <div class="boards_item">
+                <div class="boards_item predefined-board" data-board-id="in-progress">
                     <div id="board_header">
                         <span contenteditable="true" class="title">In progress</span>
-                        <img class="board_delete_img" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="">
                     </div>
-                    
-                    <div class="list">
-                        <div class="list_item" draggable="true">
-                            First Card
-                        </div>
-                    </div>
+                    <div class="list"></div>
                 </div>
-    
-                <div class="boards_item">
+                <div class="boards_item predefined-board" data-board-id="done">
                     <div id="board_header">
                         <span contenteditable="true" class="title">Done</span>
-                        <img class="board_delete_img" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="">
                     </div>
-                    
-                    <div class="list">
-                        <div class="list_item" draggable="true">
-                            First Card
-                        </div>
-                    </div>
-                </div>    
+                    <div class="list"></div>
+                </div>
             </div>
-                    
             <button class="add_board_btn">Add new board</button>
             <p id="board_note">* To delete a specific task, click on it twice</p>
         </div>
