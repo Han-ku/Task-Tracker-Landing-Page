@@ -139,12 +139,17 @@ header {
 #get_started {
     background-color: var(--brown);
     border: none;
-    color: var(--white);
     margin-top: 2rem;
     padding: .7rem 1.5rem;
     font-size: 1rem;
     border-radius: 2rem;
 }
+
+#get_started a {
+    text-decoration: none;
+    color: var(--white);
+}
+
 
 #get_started:hover {
     transform: scale(1.1);
