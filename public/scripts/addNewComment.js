@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const MAX_CHARACTERS = 1000
     const BOTTOM_COMMENT_ALERT = document.getElementById('bottom_comment-alert')
 
+    const USERNAME_INPUT = document.getElementById('userNameInput')
+    const NEW_USERNAME_INPUT = document.querySelector('input[name="user_name"]')
+
+    const togglePassword = document.getElementById('togglePassword')
+    const passwordInput = document.getElementById('password')
+
+    togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'
+        passwordInput.setAttribute('type', type)
+        this.querySelector('img').src = type === 'password' ? '/images/hide.png' : '/images/show.png'
+    })
+
     COMMENT_FORM.addEventListener('submit', async function(event) {
         event.preventDefault();
 
@@ -36,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!COMMENT_FORM.contains(ERROR_MESSAGE)) {
                     COMMENT_FORM.insertBefore(ERROR_MESSAGE, COMMENT_FORM.firstChild)
                 }
+                NEW_USERNAME_INPUT.value = USERNAME_INPUT.value; // Populate username in new user form
             } else if (result.status === 'comment_created') {
                 displayBottomComment('Comment created!', 'approved')
                 ADD_NEW_USER.classList.add('hidden')

@@ -1257,6 +1257,32 @@ footer p {
     transform: rotate(45deg) translate(0, 50%);
 }
 
+.input {
+    position: relative;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#togglePassword img {
+    width: 1.3rem; 
+    height: auto;
+}
+
 @media screen and (min-width: 1200px) {
     .boards {
         grid-template-columns: repeat(3, 1fr);
@@ -1273,6 +1299,10 @@ footer p {
       grid-auto-columns: calc((100% / 2) - 9px);
     }
 
+    /* #togglePassword img {
+        width: 3vw; 
+        height: auto;
+    } */
 
     .about_list {
         display: grid;
@@ -1343,6 +1373,12 @@ footer p {
 
   @media screen and (max-width: 600px) {
 
+/*    
+    #togglePassword img {
+        width: 4vw; 
+        height: auto;
+    } */
+    
     .about_item img {
         width: 15vh;
         height: auto;
