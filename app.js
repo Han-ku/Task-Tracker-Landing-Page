@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import {getComments, getComment, createComment, deleteComment, getUserIdByUsername, registerUser} from './connect_db.js'
 
 const APP = express()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -92,5 +92,5 @@ APP.post("/comments", async (req, res) => {
 // APP.use(express.static("public"))
 
 APP.listen(PORT, () => {
-    console.log('Server is running on port ${PORT}')
+    console.log(`Server is running on port ${PORT}`)
 })
