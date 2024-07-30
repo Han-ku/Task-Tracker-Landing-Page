@@ -7,11 +7,15 @@ const addBoardButton = document.querySelector(".add_board_btn")
 
 let value
 let draggedItem = null
+let isFormOpen = false 
+let placeholder = document.createElement('div')
+placeholder.classList.add('placeholder')
 
 function clear() {
     textarea.value = ""
     value = ""
     form.style.display = "none"
+    isFormOpen = false 
 }
 
 function saveData() {
@@ -92,23 +96,19 @@ function createBoard(title = "Input title", id = null) {
 }
 
 function addTask() {
-    document.querySelector('.add_btn').addEventListener('click', () => {
-        form.style.display = 'block'
-        addItemButton.style.display = 'none'
-        
-        textarea.addEventListener('input', e => {
-            value = e.target.value
+    const addBtn = document.querySelector('.add_btn')
+    addBtn.addEventListener('click', () => {
+        if (!isFormOpen) { 
+            form.style.display = 'block'
+            addItemButton.style.display = 'none'
+            isFormOpen = true 
 
-            if(value) {
-                addItemButton.style.display = 'block'
-            } else {
-                addItemButton.style.display = 'none'
-            }
-        })
+            textarea.removeEventListener('input', textareaInputHandler);
+            cancelItemButton.removeEventListener('click', clear);
 
-        cancelItemButton.addEventListener('click', e => {
-            clear()
-        })
+            textarea.addEventListener('input', textareaInputHandler)
+            cancelItemButton.addEventListener('click', clear)
+        }
     })
 
     addItemButton.addEventListener('click', e => {
@@ -121,6 +121,16 @@ function addTask() {
     })
 }
 addTask()
+
+function textareaInputHandler(e) {
+    value = e.target.value
+
+    if (value) {
+        addItemButton.style.display = 'block'
+    } else {
+        addItemButton.style.display = 'none'
+    }
+}
 
 function addBoard() {
     const newBoard = createBoard()
@@ -149,7 +159,7 @@ function hideToast() {
     toastOverlay.classList.add('hidden')
     document.body.classList.remove('no-scroll')
     toastVisible = false;
-    currentItem = null; 
+    currentItem = null;
     document.removeEventListener('click', outsideClickListener)
 }
 
@@ -167,9 +177,6 @@ function dragNDrop() {
     const listItems = document.querySelectorAll('.list_item')
     const lists = document.querySelectorAll('.list')
 
-    let placeholder = document.createElement('div')
-    placeholder.classList.add('placeholder')
-
     listItems.forEach(item => {
         item.addEventListener('dragstart', () => {
             draggedItem = item
@@ -182,7 +189,9 @@ function dragNDrop() {
             setTimeout(() => {
                 item.style.display = 'block'
                 draggedItem = null
-                placeholder.remove()
+                if (placeholder.parentElement) {
+                    placeholder.remove()
+                }
                 saveData()
             }, 0)
         })
@@ -191,7 +200,7 @@ function dragNDrop() {
             if (!toastVisible) {
                 currentItem = item
                 showToast()
-            } 
+            }
         })
     })
 
@@ -213,18 +222,20 @@ function dragNDrop() {
             }
         })
 
-        list.addEventListener('dragenter', function(e) {
+        list.addEventListener('dragenter', function (e) {
             e.preventDefault()
         })
 
-        list.addEventListener('dragleave', function(e) {
+        list.addEventListener('dragleave', function (e) {
         })
 
-        list.addEventListener('drop', function(e)  {
+        list.addEventListener('drop', function (e) {
             e.preventDefault()
             if (draggedItem) {
                 list.insertBefore(draggedItem, placeholder)
-                placeholder.remove()
+                if (placeholder.parentElement) {
+                    placeholder.remove()
+                }
                 saveData()
             }
         })
